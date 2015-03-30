@@ -1,3 +1,9 @@
+/**
+ * Read color from text input, checks if is correct.
+ * 
+ * @param elementId element id of text input
+ * @returns HEX code of color
+ */
 function getColorValueFromId(elementId) {
 	var regex = new RegExp("\\b[0-9a-fA-F]{3}\\b|\\b[0-9a-fA-F]{6}\\b");
 	var object = document.getElementById(elementId);
@@ -20,7 +26,9 @@ function getColorValueFromId(elementId) {
 	}
 }
 
-/* Status bar part */
+/**
+ * Applies color on Status Bar.
+ */
 function applyStatusBar() {
 	var bar = document.getElementById(statusBar);
 	var line = document.getElementById(statusLine);
@@ -44,7 +52,14 @@ function applyStatusBar() {
 	generateConfig();
 }
 
-/* Workspace part */
+/**
+ * Applies colors on workspace defined workspace.
+ * 
+ * @param objectId element id of workspace element
+ * @param borderId element id of text input with border color
+ * @param backgroundId element id of text input with background color
+ * @param textId element id of text input with text color
+ */
 function applyWorkspace(objectId, borderId, backgroundId, textId) {
 	var object = document.getElementById(objectId);
 	var border = getColorValueFromId(borderId);
@@ -62,22 +77,43 @@ function applyWorkspace(objectId, borderId, backgroundId, textId) {
 	generateConfig();
 }
 
+/**
+ * Applies colors for focused workspace (using constants).
+ */
 function applyFocusedWorkspace() {
 	applyWorkspace(wrkFocused, wrkFocusedBorder, wrkFocusedBackground, wrkFocusedText);
 }
 
+/**
+ * Applies colors for active workspace (using constants).
+ */
 function applyActiveWorkspace() {
 	applyWorkspace(wrkActive, wrkActiveBorder, wrkActiveBackground, wrkActiveText);
 }
 
+/**
+ * Applies colors for inactive workspace (using constants).
+ */
 function applyInactiveWorkspace() {
 	applyWorkspace(wrkInactive, wrkInactiveBorder, wrkInactiveBackground, wrkInactiveText);
 }
 
+/**
+ * Applies colors for urgent workspace (using constants).
+ */
 function applyUrgentWorkspace() {
 	applyWorkspace(wrkUrgent, wrkUrgentBorder, wrkUrgentBackground, wrkUrgentText);
 }
 
+/**
+ * Reads colors from workspace. <br />
+ * This function is currently unused.
+ * 
+ * @param objectId element id of workspace element
+ * @param borderId element id of text input for border color
+ * @param backgroundId element id of text input for background color
+ * @param textId element id of text input for text color
+ */
 function readWorkspace(objectId, borderId, backgroundId, textId) {
 	var object = document.getElementById(objectId);
 	var border = document.getElementById(borderId);
@@ -90,6 +126,18 @@ function readWorkspace(objectId, borderId, backgroundId, textId) {
 }
 
 /* Window part */
+
+/**
+ * Applies colors on defined window.
+ * 
+ * @param bodyId element id of window body
+ * @param titleId element id of window title
+ * @param tdId element id of window td (for indicators)
+ * @param borderId element id of text input with border color
+ * @param backgroundId element id of text input with background color
+ * @param textId element id of text input with text color
+ * @param indicatorId element id of text input with indicator color
+ */
 function applyWindow(bodyId, titleId, tdId, borderId, backgroundId, textId, indicatorId) {
 	var body = document.getElementById(bodyId);
 	var title = document.getElementById(titleId);
@@ -114,22 +162,40 @@ function applyWindow(bodyId, titleId, tdId, borderId, backgroundId, textId, indi
 	generateConfig();
 }
 
+/**
+ * Applies colors for focused window (using constants).
+ */
 function applyFocusedWindow() {
 	applyWindow(winFocusedBody, winFocusedTitle, winFocusedTd, winFocusedBorder, winFocusedBackground, winFocusedText, winFocusedIndicator);
 }
 
+/**
+ * Applies colors for inactive window (using constants).
+ */
 function applyInactiveWindow() {
 	applyWindow(winInactiveBody, winInactiveTitle, winInactiveTd, winInactiveBorder, winInactiveBackground, winInactiveText, winInactiveIndicator);
 }
 
+/**
+ * Applies colors for unfocused window (using constants).
+ */
 function applyUnfocusedWindow() {
 	applyWindow(winUnfocusedBody, winUnfocusedTitle, winUnfocusedTd, winUnfocusedBorder, winUnfocusedBackground, winUnfocusedText, winUnfocusedIndicator);
 }
 
+/**
+ * Applies colors for urgent window (using constants).
+ */
 function applyUrgentWindow() {
 	applyWindow(winUrgentBody, winUrgentTitle, winUrgentTd, winUrgentBorder, winUrgentBackground, winUrgentText, winUrgentIndicator);
 }
 
+/**
+ * Checks if color is not null, if is, it return constant "errcolor".
+ * 
+ * @param color
+ * @returns color
+ */
 function notNullcolor(color) {
 	if (null != color) {
 		return color;
@@ -137,6 +203,9 @@ function notNullcolor(color) {
 	return "errcolor";
 }
 
+/**
+ * Reads all color from text inputs and generate i3 config.
+ */
 function generateConfig() {
 	var i3config = document.getElementById(configId);
 	i3config.innerHTML = config
@@ -174,6 +243,13 @@ function generateConfig() {
 }
 
 /* Color mixer */
+
+/**
+ * Copies values between two inputs.
+ * 
+ * @param objectFromId element id of source element
+ * @param objectToId element id of target element
+ */
 function copyValue(objectFromId, objectToId) {
 	var from = document.getElementById(objectFromId);
 	var to = document.getElementById(objectToId);
@@ -181,11 +257,24 @@ function copyValue(objectFromId, objectToId) {
 	joinColors();
 }
 
+/**
+ * Handles zero padding for number values.
+ * 
+ * @param num number
+ * @param places number length
+ * @returns padded number
+ */
 function zeroPad(num, places) {
 	var zero = places - num.toString().length + 1;
 	return Array( + (zero > 0 && zero)).join("0") + num;
 }
 
+/**
+ * Converts decimal number to hex number. Return 0, if parameter is null.
+ * 
+ * @param dec decimal number
+ * @returns hex number
+ */
 function decToHex(dec) {
 	if (null != dec) {
 		return zeroPad(parseInt(dec, 10).toString(16), 2);
@@ -193,6 +282,12 @@ function decToHex(dec) {
 	return 0;
 }
 
+/**
+ * Converts hex number to decimal number. Return 0, if parameter is null.
+ * 
+ * @param hex hex number
+ * @returns decimal number
+ */
 function hexToDec(hex) {
 	if (null != hex) {
 		return zeroPad(parseInt(hex, 16).toString(10), 2);
@@ -200,6 +295,9 @@ function hexToDec(hex) {
 	return 0;
 }
 
+/**
+ * Joins decimal colors from mixer and converts it into HEX color number in mixer.
+ */
 function joinColors() {
 	var object = document.getElementById(mixedColor);
 	var textObject = document.getElementById(mixedColorHex);
@@ -214,31 +312,64 @@ function joinColors() {
 	textObject.innerHTML = hex;
 }
 
+/**
+ * Sets value into object (according element id).
+ * 
+ * @param objectId element id of element
+ * @param value wanted value
+ */
 function setValue(objectId, value) {
 	var object = document.getElementById(objectId);
 	object.value = value;
 }
 
+/**
+ * Adds onclick event into object (according element id). 
+ * 
+ * @param objectId element id of element
+ * @param fce function of event
+ */
 function addClickListener(objectId, fce) {
 	var object = document.getElementById(objectId);
 	object.onclick = fce;
 }
 
+/**
+ * Adds onchange event into object (according element id).
+ * 
+ * @param objectId element id of element
+ * @param fce function of event
+ */
 function addChangeListener(objectId, fce) {
 	var object = document.getElementById(objectId);
 	object.onchange = fce;
 }
 
+/**
+ * Adds oninput event into object (according element id).
+ * 
+ * @param objectId element id of element
+ * @param fce function of event
+ */
 function addInputListener(objectId, fce) {
 	var object = document.getElementById(objectId);
 	object.oninput = fce;
 }
 
+/**
+ * Adds onkeyup event into object (according element id).
+ * 
+ * @param objectId element id of element
+ * @param fce function of event
+ */
 function addKeyUpListener(objectId, fce) {
 	var object = document.getElementById(objectId);
 	object.onkeyup = fce;
 }
 
+/**
+ * Adds event listeners and default values into Status Bar inputs.
+ */
 function statusListeners() {
 	addKeyUpListener(stsBackground, function () {
 		applyStatusBar();
@@ -254,6 +385,9 @@ function statusListeners() {
 	setValue(stsSeparator, "#666666");
 }
 
+/**
+ * Adds event listeners and default values into Workspace inputs.
+ */
 function workspaceListeners() {
 	// focused workspace
 	addKeyUpListener(wrkFocusedBorder, function () {
@@ -312,6 +446,9 @@ function workspaceListeners() {
 	setValue(wrkUrgentText, "#ffffff");
 }
 
+/**
+ * Adds event listeners and default values into Window inputs.
+ */
 function windowListeners() {
 	// focused window
 	addKeyUpListener(winFocusedBorder, function () {
@@ -386,6 +523,9 @@ function windowListeners() {
 	setValue(winUrgentIndicator, "#900000");
 }
 
+/**
+ * Adds event listener and default values into color mixer inputs.
+ */
 function mixerListeners() {
 	// red
 	addChangeListener(rangeRed, function () {
@@ -448,6 +588,11 @@ function mixerListeners() {
 	});
 }
 
+/**
+ * Apply color from color mixer.
+ * 
+ * @param applier element of button
+ */
 function applyColor(applier) {
 	var inputs = applier.parentNode.getElementsByTagName("input");
 	for (var i = 0; i < inputs.length; i++) {
@@ -462,6 +607,11 @@ function applyColor(applier) {
 	}
 }
 
+/**
+ * Loads color value from Color mixer history.
+ * 
+ * @param mixerHexValue element id of history element
+ */
 function readColorFromHistory(mixerHexValue) {
 	var colorObject = document.getElementById(mixerHexValue);
 	if (null != colorObject) {
@@ -489,6 +639,11 @@ function readColorFromHistory(mixerHexValue) {
 	}
 }
 
+/**
+ * Create color applier for object.
+ * 
+ * @param object
+ */
 function createColorApplier(object) {
 	var applier = document.createElement("input");
 	applier.setAttribute("type", "button");
@@ -500,6 +655,9 @@ function createColorApplier(object) {
 	object.parentNode.appendChild(applier);
 }
 
+/**
+ * Adds color appliers into all text inputs in editor.
+ */
 function addColorAppliers() {
 	var div = document.getElementById("editor");
 	var inputs = div.getElementsByTagName("input");
@@ -511,11 +669,24 @@ function addColorAppliers() {
 	}
 }
 
+/**
+ * Moves colors from one element into another.
+ * 
+ * @param objMixerColor
+ * @param objMixerColorHex
+ * @param objMixerColor2
+ * @param objMixerColorHex2
+ */
 function forwardValues(objMixerColor, objMixerColorHex, objMixerColor2, objMixerColorHex2) {
 	objMixerColor2.style.backgroundColor = objMixerColor.style.backgroundColor;
 	objMixerColorHex2.innerHTML = objMixerColorHex.innerHTML;
 }
 
+/**
+ * Saves colors and push it into colors history.
+ * 
+ * @param color HEX number of color
+ */
 function storeColor(color) {
 	var mixer1 = document.getElementById(mixedColor1);
 	var mixerHex1 = document.getElementById(mixedColorHex1); 
@@ -543,6 +714,9 @@ function storeColor(color) {
 	}
 }
 
+/**
+ * Init method.
+ */
 function init() {
 	statusListeners();
 	workspaceListeners();
