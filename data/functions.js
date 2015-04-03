@@ -715,6 +715,17 @@ function storeColor(color) {
 }
 
 /**
+ * Pushes default colors into mixer history.
+ */
+function initMixerHistory() {
+	storeColor("#285577");
+	storeColor("#5f676a");
+	storeColor("#333333");
+	storeColor("#4c7899");
+	storeColor("#ffffff");
+}
+
+/**
  * Init method.
  */
 function init() {
@@ -724,4 +735,5 @@ function init() {
 	mixerListeners();
 	addColorAppliers();
 	generateConfig();
+	initMixerHistory();
 }
