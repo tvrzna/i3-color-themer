@@ -159,6 +159,8 @@ var mixedColor4 = "mixedColor4";
 var mixedColorHex4 = "mixedColorHex4";
 var mixedColor5 = "mixedColor5";
 var mixedColorHex5 = "mixedColorHex5";
+var mixedColor6 = "mixedColor6";
+var mixedColorHex6 = "mixedColorHex6";
 
 
 /**
@@ -803,6 +805,10 @@ function mixerListeners() {
     addClickListener(mixedColor5, function () {
 	readColorFromHistory(mixedColorHex5);
     });
+
+    addClickListener(mixedColor6, function () {
+	readColorFromHistory(mixedColorHex6);
+    });
 }
 
 function configListeners() {
@@ -1031,6 +1037,10 @@ function storeColor(color) {
 	var mixer5 = document.getElementById(mixedColor5);
 	var mixerHex5 = document.getElementById(mixedColorHex5);
 
+	var mixer6 = document.getElementById(mixedColor6);
+	var mixerHex6 = document.getElementById(mixedColorHex6);
+
+	forwardValues(mixer5, mixerHex5, mixer6, mixerHex6);
 	forwardValues(mixer4, mixerHex4, mixer5, mixerHex5);
 	forwardValues(mixer3, mixerHex3, mixer4, mixerHex4);
 	forwardValues(mixer2, mixerHex2, mixer3, mixerHex3);
@@ -1050,6 +1060,19 @@ function initMixerHistory() {
     storeColor("#333333");
     storeColor("#4c7899");
     storeColor("#ffffff");
+    storeColor("#000000");
+}
+
+function applyConfig() {
+    applyStatusBar();
+    applyFocusedWorkspace();
+    applyActiveWorkspace();
+    applyInactiveWorkspace();
+    applyUrgentWorkspace();
+    applyFocusedWindow();
+    applyInactiveWindow();
+    applyUnfocusedWindow();
+    applyUrgentWindow();
 }
 
 /**
@@ -1064,4 +1087,5 @@ function init() {
     addColorAppliers();
     generateConfig();
     initMixerHistory();
+    applyConfig();
 }
