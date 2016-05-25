@@ -224,7 +224,7 @@ html {
     white-space: nowrap;
 }
 
-input[type=text], input[type=number] {
+input[type=text], input[type=number], input[type=range] {
     background-color: #000000;
     color: green;
     border: 1px solid #101010;
@@ -269,6 +269,10 @@ input[type=text]:focus, input[type=number]:focus {
 **/
 #i3desk #i3winIndicatorInactive td {
     border: 0;
+}
+
+#mixedColorTd {
+    width: 110px;
 }
 
 #mixedColor {
@@ -323,24 +327,28 @@ input[type=text]:focus, input[type=number]:focus {
 	font-size: 20pt;
     }
 
+    .window {
+	box-sizing: border-box;
+    }
+
     #i3winIndicatorFocused, #i3winIndicatorUrgent {
-	width: 64.8%;
+	width: 65%;
 	float: left;
     }
 
     #i3winIndicatorInactive, #i3winIndicatorUnfocused {
-	width: 34.9%;
-	float: left;
+	width: 35%;
+	float: right;
     }
 
     #i3windows {
 	display: table;
-	clear: left;
+	clear: both;
     }
 }
 
 @media (min-width: 1433px) {
-    input[type=text], input[type=number] {
+    input[type=text], input[type=number], input[type=range] {
 	max-width: 130px;
     }
 }
@@ -354,6 +362,10 @@ input[type=text]:focus, input[type=number]:focus {
 
     #i3barStatus .separated {
 	display: none;
+    }
+
+    input[type=range] {
+	max-width: 130px;
     }
 }
 
