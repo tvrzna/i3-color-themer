@@ -1089,3 +1089,5 @@ function init() {
     initMixerHistory();
     applyConfig();
 }
+
+window.addEventListener("load", init, false);
