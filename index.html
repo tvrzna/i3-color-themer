@@ -1,231 +1,230 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>i3-color-themer</title>
-        <meta name="author" content="Michal Tvrzník" />
-        <meta name="description" content="Interactive i3wm color themer." />
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link href="data/style.css" rel="stylesheet" type="text/css" media="screen" />
-        <script type="text/javascript" src="data/constants.js"></script>
-        <script type="text/javascript" src="data/functions.js"></script>
+	<title>i3-color-themer</title>
+	<meta name="author" content="Michal Tvrzník" />
+	<meta name="description" content="Interactive i3wm color themer." />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="data/style.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="data/functions.js"></script>
     </head>
-    <body onload="init();">
-        <div id="i3">
-            <div id="i3desk">
-                <table id="i3windows">
-                    <tr>
-                        <td id="i3winIndicatorFocused" width="65%">
-                            <div>
-                                <div id="i3winTitleFocused" class="i3winTitle">Focused Terminal - editor</div>
-                                <div id="i3winBodyFocused" class="i3winBody">
-                                    <div id="colors">
-                                        <div id="editor">
-                                            <table>
-                                                <tr>
-                                                    <th>Type</th>
-                                                    <th>Background</th>
-                                                    <th>Statusline</th>
-                                                    <th>Separator</th>
-                                                    <th></th>
-                                                </tr>
-                                                <tr>
-                                                    <td>Status line</td>
-                                                    <td><input type="text" id="txtStatusBackground" /></td>
-                                                    <td><input type="text" id="txtStatusLine" /></td>
-                                                    <td><input type="text" id="txtStatusSeparator" /></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="5">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Type</th>
-                                                    <th>Border</th>
-                                                    <th>Background</th>
-                                                    <th>Text</th>
-                                                    <th></th>
-                                                </tr>
-                                                <tr>
-                                                    <td>Focused workspace</td>
-                                                    <td><input type="text" id="txtFocusBorder" /></td>
-                                                    <td><input type="text" id="txtFocusBackground" /></td>
-                                                    <td><input type="text" id="txtFocusText" /></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Active workspace</td>
-                                                    <td><input type="text" id="txtActiveBorder" /></td>
-                                                    <td><input type="text" id="txtActiveBackground" /></td>
-                                                    <td><input type="text" id="txtActiveText" /></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Inactive workspace</td>
-                                                    <td><input type="text" id="txtInactiveBorder" /></td>
-                                                    <td><input type="text" id="txtInactiveBackground" /></td>
-                                                    <td><input type="text" id="txtInactiveText" /></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Urgent workspace</td>
-                                                    <td><input type="text" id="txtUrgentBorder" /></td>
-                                                    <td><input type="text" id="txtUrgentBackground" /></td>
-                                                    <td><input type="text" id="txtUrgentText" /></td>
-                                                    <td></td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="5">&nbsp;</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Type</th>
-                                                    <th>Border</th>
-                                                    <th>Background</th>
-                                                    <th>Text</th>
-                                                    <th>Indicator</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>Focused window</td>
-                                                    <td><input type="text" id="txtFocusWinBorder" /></td>
-                                                    <td><input type="text" id="txtFocusWinBackground" /></td>
-                                                    <td><input type="text" id="txtFocusWinText" /></td>
-                                                    <td><input type="text" id="txtFocusWinIndicator" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Inactive window</td>
-                                                    <td><input type="text" id="txtInactiveWinBorder" /></td>
-                                                    <td><input type="text" id="txtInactiveWinBackground" /></td>
-                                                    <td><input type="text" id="txtInactiveWinText" /></td>
-                                                    <td><input type="text" id="txtInactiveWinIndicator" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Unfocused window</td>
-                                                    <td><input type="text" id="txtUnfocusWinBorder" /></td>
-                                                    <td><input type="text" id="txtUnfocusWinBackground" /></td>
-                                                    <td><input type="text" id="txtUnfocusWinText" /></td>
-                                                    <td><input type="text" id="txtUnfocusWinIndicator" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Urgent window</td>
-                                                    <td><input type="text" id="txtUrgentWinBorder" /></td>
-                                                    <td><input type="text" id="txtUrgentWinBackground" /></td>
-                                                    <td><input type="text" id="txtUrgentWinText" /></td>
-                                                    <td><input type="text" id="txtUrgentWinIndicator" /></td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                        <td id="i3winIndicatorInactive">
-                            <div>
-                                <div id="i3winTitleInactive" class="i3winTitle">Inactive Terminal - color mixer</div>
-                                <div id="i3winBodyInactive" class="i3winBody">
-                                    <table>
-                                        <tr>
-                                            <td rowspan="3">
-                                                <div id="mixedColor">
-                                                    <div id="mixedColorHex">#ffffff</div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <input type="range" id="rangeRed" min="0" max="255" step="1" />
-                                                <input type="number" id="numberRed" min="0" max="255" step="1" />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <input type="range" id="rangeGreen" min="0" max="255" step="1" />
-                                                <input type="number" id="numberGreen" min="0" max="255" step="1" />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <input type="range" id="rangeBlue" min="0" max="255" step="1" />
-                                                <input type="number" id="numberBlue" min="0" max="255" step="1" />
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <div id="mixedColor1" class="mixedColor">
-                                                    <div id="mixedColorHex1" class="mixedColorHex"></div>
-                                                </div>
-                                                <div id="mixedColor2" class="mixedColor">
-                                                    <div id="mixedColorHex2" class="mixedColorHex"></div>
-                                                </div>
-                                                <div id="mixedColor3" class="mixedColor">
-                                                    <div id="mixedColorHex3" class="mixedColorHex"></div>
-                                                </div>
-                                                <div id="mixedColor4" class="mixedColor">
-                                                    <div id="mixedColorHex4" class="mixedColorHex"></div>
-                                                </div>
-                                                <div id="mixedColor5" class="mixedColor">
-                                                    <div id="mixedColorHex5" class="mixedColorHex"></div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td id="i3winIndicatorUrgent">
-                            <div>
-                                <div id="i3winTitleUrgent" class="i3winTitle">Urgent Terminal - config</div>
-                                <div id="i3winBodyUrgent" class="i3winBody">
-                                    <div id="nanoHead">File: config</div>
-                                    <pre id="i3config"></pre>
-                                    <table id="nanoFoot">
-                                        <tr>
-                                            <td><span class="silver">&#94;G</span> Get Help</td>
-                                            <td><span class="silver">&#94;O</span> WriteOut</td>
-                                            <td><span class="silver">&#94;R</span> ReadFile</td>
-                                            <td><span class="silver">&#94;Y</span> Prev Page</td>
-                                            <td><span class="silver">&#94;K</span> Cut Text</td>
-                                            <td><span class="silver">&#94;C</span> Cur Pos</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="silver">&#94;X</span> Exit</td>
-                                            <td><span class="silver">&#94;J</span> Justify</td>
-                                            <td><span class="silver">&#94;W</span> Where Is</td>
-                                            <td><span class="silver">&#94;V</span> Next Page</td>
-                                            <td><span class="silver">&#94;U</span> UnCut Text</td>
-                                            <td><span class="silver">&#94;T</span> To Spell</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </td>
-                        <td id="i3winIndicatorUnfocused">
-                            <div>
-                                <div id="i3winTitleUnfocused" class="i3winTitle">Unfocused Terminal</div>
-                                <div id="i3winBodyUnfocused" class="i3winBody">
-                                    <span class="host">[guest&#64;hostname]</span> &#8764; <strong class="host">&#36;</strong>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-                <div id="i3bar">
-                    <span id="i3barFocused" class="i3barWorkspace">1: focused</span>
-                    <span id="i3barActive" class="i3barWorkspace">2: inactive</span>
-                    <span id="i3barInactive" class="i3barWorkspace">3: unfocused</span>
-                    <span id="i3barUrgent" class="i3barWorkspace">4: urgent</span>
-                    <ul id="i3barStatus">
-                        <li class="separated">DHCP: no</li>
-                        <li class="separated">VPN: no</li>
-                        <li class="separated">W: no</li>
-                        <li class="separated">E: 0.0.0.0</li>
-                        <li class="separated">FULL 99%</li>
-                        <li class="separated">0.1 0.1 0.1</li>
-                        <li>13.03.2015 00:00:00</li>
-                    </ul>
-                </div>
-            </div>
-            <div id="displayLogo">
-                <a href="https://i3wm.org/">i3-color-themer</a>
-            </div>
-        </div>
+    <body>
+	<div id="i3">
+	    <div id="i3desk">
+		<div id="i3windows">
+		    <div id="i3winIndicatorFocused" class="window">
+			<div>
+			    <div id="i3winTitleFocused" class="i3winTitle">Focused Terminal - editor</div>
+			    <div id="i3winBodyFocused" class="i3winBody">
+				<div id="colors">
+				    <div id="editor">
+					<table>
+					    <tr>
+						<th>Type</th>
+						<th>Background</th>
+						<th>Statusline</th>
+						<th>Separator</th>
+						<th></th>
+					    </tr>
+					    <tr>
+						<td>Status line</td>
+						<td><input type="text" id="txtStatusBackground" /></td>
+						<td><input type="text" id="txtStatusLine" /></td>
+						<td><input type="text" id="txtStatusSeparator" /></td>
+						<td></td>
+					    </tr>
+					    <tr>
+						<td colspan="5">&nbsp;</td>
+					    </tr>
+					    <tr>
+						<th>Type</th>
+						<th>Border</th>
+						<th>Background</th>
+						<th>Text</th>
+						<th></th>
+					    </tr>
+					    <tr>
+						<td>Focused workspace</td>
+						<td><input type="text" id="txtFocusBorder" /></td>
+						<td><input type="text" id="txtFocusBackground" /></td>
+						<td><input type="text" id="txtFocusText" /></td>
+						<td></td>
+					    </tr>
+					    <tr>
+						<td>Active workspace</td>
+						<td><input type="text" id="txtActiveBorder" /></td>
+						<td><input type="text" id="txtActiveBackground" /></td>
+						<td><input type="text" id="txtActiveText" /></td>
+						<td></td>
+					    </tr>
+					    <tr>
+						<td>Inactive workspace</td>
+						<td><input type="text" id="txtInactiveBorder" /></td>
+						<td><input type="text" id="txtInactiveBackground" /></td>
+						<td><input type="text" id="txtInactiveText" /></td>
+						<td></td>
+					    </tr>
+					    <tr>
+						<td>Urgent workspace</td>
+						<td><input type="text" id="txtUrgentBorder" /></td>
+						<td><input type="text" id="txtUrgentBackground" /></td>
+						<td><input type="text" id="txtUrgentText" /></td>
+						<td></td>
+					    </tr>
+					    <tr>
+						<td colspan="5">&nbsp;</td>
+					    </tr>
+					    <tr>
+						<th>Type</th>
+						<th>Border</th>
+						<th>Background</th>
+						<th>Text</th>
+						<th>Indicator</th>
+					    </tr>
+					    <tr>
+						<td>Focused window</td>
+						<td><input type="text" id="txtFocusWinBorder" /></td>
+						<td><input type="text" id="txtFocusWinBackground" /></td>
+						<td><input type="text" id="txtFocusWinText" /></td>
+						<td><input type="text" id="txtFocusWinIndicator" /></td>
+					    </tr>
+					    <tr>
+						<td>Inactive window</td>
+						<td><input type="text" id="txtInactiveWinBorder" /></td>
+						<td><input type="text" id="txtInactiveWinBackground" /></td>
+						<td><input type="text" id="txtInactiveWinText" /></td>
+						<td><input type="text" id="txtInactiveWinIndicator" /></td>
+					    </tr>
+					    <tr>
+						<td>Unfocused window</td>
+						<td><input type="text" id="txtUnfocusWinBorder" /></td>
+						<td><input type="text" id="txtUnfocusWinBackground" /></td>
+						<td><input type="text" id="txtUnfocusWinText" /></td>
+						<td><input type="text" id="txtUnfocusWinIndicator" /></td>
+					    </tr>
+					    <tr>
+						<td>Urgent window</td>
+						<td><input type="text" id="txtUrgentWinBorder" /></td>
+						<td><input type="text" id="txtUrgentWinBackground" /></td>
+						<td><input type="text" id="txtUrgentWinText" /></td>
+						<td><input type="text" id="txtUrgentWinIndicator" /></td>
+					    </tr>
+					</table>
+				    </div>
+				</div>
+			    </div>
+			</div>
+		    </div>
+		    <div id="i3winIndicatorInactive" class="window">
+			<div>
+			    <div id="i3winTitleInactive" class="i3winTitle">Inactive Terminal - color mixer</div>
+			    <div id="i3winBodyInactive" class="i3winBody">
+				<table>
+				    <tr>
+					<td id="mixedColorTd" rowspan="3">
+					    <div id="mixedColor">
+						<div id="mixedColorHex">#ffffff</div>
+					    </div>
+					</td>
+					<td>
+					    <input type="range" id="rangeRed" min="0" max="255" step="1" />
+					    <input type="number" id="numberRed" min="0" max="255" step="1" />
+					</td>
+				    </tr>
+				    <tr>
+					<td>
+					    <input type="range" id="rangeGreen" min="0" max="255" step="1" />
+					    <input type="number" id="numberGreen" min="0" max="255" step="1" />
+					</td>
+				    </tr>
+				    <tr>
+					<td>
+					    <input type="range" id="rangeBlue" min="0" max="255" step="1" />
+					    <input type="number" id="numberBlue" min="0" max="255" step="1" />
+					</td>
+				    </tr>
+				    <tr>
+					<td colspan="2">
+					    <div id="mixedColor1" class="mixedColor">
+						<div id="mixedColorHex1" class="mixedColorHex"></div>
+					    </div>
+					    <div id="mixedColor2" class="mixedColor">
+						<div id="mixedColorHex2" class="mixedColorHex"></div>
+					    </div>
+					    <div id="mixedColor3" class="mixedColor">
+						<div id="mixedColorHex3" class="mixedColorHex"></div>
+					    </div>
+					    <div id="mixedColor4" class="mixedColor">
+						<div id="mixedColorHex4" class="mixedColorHex"></div>
+					    </div>
+					    <div id="mixedColor5" class="mixedColor">
+						<div id="mixedColorHex5" class="mixedColorHex"></div>
+					    </div>
+					    <div id="mixedColor6" class="mixedColor">
+						<div id="mixedColorHex6" class="mixedColorHex"></div>
+					    </div>
+					</td>
+				    </tr>
+				</table>
+			    </div>
+			</div>
+		    </div>
+		    <div id="i3winIndicatorUrgent" class="window">
+			<div>
+			    <div id="i3winTitleUrgent" class="i3winTitle">Urgent Terminal - config</div>
+			    <div id="i3winBodyUrgent" class="i3winBody">
+				<div id="nanoHead">File: config</div>
+				<pre id="i3config" contenteditable="true" spellcheck="false"></pre>
+				<table id="nanoFoot">
+				    <tr>
+					<td><span class="silver">&#94;G</span> Get Help</td>
+					<td><span class="silver">&#94;O</span> WriteOut</td>
+					<td><span class="silver">&#94;R</span> ReadFile</td>
+					<td><span class="silver">&#94;Y</span> Prev Page</td>
+					<td><span class="silver">&#94;K</span> Cut Text</td>
+					<td><span class="silver">&#94;C</span> Cur Pos</td>
+				    </tr>
+				    <tr>
+					<td><span class="silver">&#94;X</span> Exit</td>
+					<td><span class="silver">&#94;J</span> Justify</td>
+					<td><span class="silver">&#94;W</span> Where Is</td>
+					<td><span class="silver">&#94;V</span> Next Page</td>
+					<td><span class="silver">&#94;U</span> UnCut Text</td>
+					<td><span class="silver">&#94;T</span> To Spell</td>
+				    </tr>
+				</table>
+			    </div>
+			</div>
+		    </div>
+		    <div id="i3winIndicatorUnfocused" class="window">
+			<div>
+			    <div id="i3winTitleUnfocused" class="i3winTitle">Unfocused Terminal</div>
+			    <div id="i3winBodyUnfocused" class="i3winBody">
+				<span class="host">[guest&#64;hostname]</span> &#8764; <strong class="host">&#36;</strong>
+			    </div>
+			</div>
+		    </div>
+		</div>
+		<div id="i3bar">
+		    <span id="i3barFocused" class="i3barWorkspace">1: focused</span>
+		    <span id="i3barActive" class="i3barWorkspace">2: inactive</span>
+		    <span id="i3barInactive" class="i3barWorkspace">3: unfocused</span>
+		    <span id="i3barUrgent" class="i3barWorkspace">4: urgent</span>
+		    <ul id="i3barStatus">
+			<li class="separated">DHCP: no</li>
+			<li class="separated">VPN: no</li>
+			<li class="separated">W: no</li>
+			<li class="separated">E: 0.0.0.0</li>
+			<li class="separated">FULL 99%</li>
+			<li class="separated">0.1 0.1 0.1</li>
+			<li>13.03.2015 00:00:00</li>
+		    </ul>
+		</div>
+	    </div>
+	    <div id="displayLogo">
+		<a href="https://i3wm.org/">i3-color-themer</a>
+	    </div>
+	</div>
     </body>
 </html>

@@ -1,304 +1,376 @@
 /**
-	Common style
+    Common style
 **/
 html {
-	font-family: Arial;
-	font-size: 10pt;
-	background-color: #fff;
+    font-family: Arial;
+    font-size: 10pt;
+    background-color: #fff;
 }
 
 #colors {
-	
+
 }
 
 #i3 {
-	font-family: Courier New, Monospace, Deja Vu Sans Mono, Droid Sans Mono;
-	border-radius: 20px;
-	background: linear-gradient(to top right, #000000, #303030);
-	padding: 50px 50px 20px 50px;
+    font-family: Courier New, Monospace, Deja Vu Sans Mono, Droid Sans Mono;
+    border-radius: 20px;
+    background: linear-gradient(to top right, #000000, #303030);
+    padding: 20px 20px 5px 20px;
 }
 
 #displayLogo {
-	padding-top: 20px;
-	color: #c0c0c0;
-	font-size: 20pt;
-	text-align: center;
-	font-weight: bold;
-	font-style: italic;
-	font-family: Arial, Deja Vu;
+    padding-top: 5px;
+    color: #c0c0c0;
+    font-size: 14pt;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Arial, Deja Vu;
 }
 
 #displayLogo a {
-	text-decoration: none;
-	color: #c0c0c0;
+    text-decoration: none;
+    color: #c0c0c0;
 }
 
 #displayLogo a:hover {
-	color: #0280AF;
+    color: #0280AF;
 }
 
 /**
-	Bar default style
+    Bar default style
 **/
 #i3bar {
-	background-color: #000000;
-	font-size: 0;
+    background-color: #000000;
+    font-size: 0;
 }
 
 #i3barStatus {
-	float: right;
-	font-size: 9pt;
-	padding: 3px;
-	color: #ffffff;
-	margin: 0;
+    float: right;
+    font-size: 9pt;
+    padding: 3px;
+    color: #ffffff;
+    margin: 0;
 }
 
 #i3barStatus li {
-	list-style-type: none;
-	display: inline;
+    list-style-type: none;
+    display: inline;
 }
 
 #i3barStatus .separated {
-	border-right: 2px solid;
-	border-color: #666666;
-	padding: 0 10px 0 0;
+    border-right: 2px solid;
+    border-color: #666666;
+    padding: 0 10px 0 0;
 }
 
 /**
-	Bar workspaces default style
+    Bar workspaces default style
 **/
 .i3barWorkspace {
-	display: inline-block;
-	padding: 2px 4px 2px 4px;
-	margin: 1px 1px 1px 0;
-	font-size: 9pt;
+    display: inline-block;
+    padding: 2px 4px 2px 4px;
+    margin: 1px 1px 1px 0;
+    font-size: 9pt;
 }
 
 #i3barFocused {
-	border: 1px solid #4c7899;
-	background-color: #285577;
-	color: #ffffff;
+    border: 1px solid #4c7899;
+    background-color: #285577;
+    color: #ffffff;
 }
 
 #i3barActive {
-	border: 1px solid #333333;
-	background-color: #5f676a;
-	color: #ffffff;
+    border: 1px solid #333333;
+    background-color: #5f676a;
+    color: #ffffff;
 }
 
 #i3barInactive {
-	border: 1px solid #333333;
-	background-color: #222222;
-	color: #ffffff;
+    border: 1px solid #333333;
+    background-color: #222222;
+    color: #ffffff;
 }
 
 #i3barUrgent {
-	border: 1px solid #2f343a;
-	background-color: #900000;
-	color: #ffffff;
+    border: 1px solid #2f343a;
+    background-color: #900000;
+    color: #ffffff;
 }
 
 /**
-	Desk default style
+    Desk default style
 **/
 #i3desk {
-	border: 5px solid;
-	border-top-color: #101010;
-	border-right-color: #151515;
-	border-bottom-color: #303030;
-	border-left-color: #202020;
+    border: 5px solid;
+    border-top-color: #101010;
+    border-right-color: #151515;
+    border-bottom-color: #303030;
+    border-left-color: #202020;
 }
 
 #i3desk #i3windows {
-	width: 100%;
-	border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 
-#i3desk #i3windows td {
-	vertical-align: top;
-	border-collapse: collapse;
-	padding: 0;
-	border-right: 1px solid;
-	border-bottom: 1px solid;
+#i3desk #i3windows td, #i3desk #i3windows .window {
+    vertical-align: top;
+    border-collapse: collapse;
+    padding: 0;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
 }
 
 #i3desk #colors table {
-	color: #c0c0c0;
+    color: #c0c0c0;
 }
 
 #i3desk #colors td {
-	border: 0;
-	text-align: left;
+    border: 0;
+    text-align: left;
 }
 
 .i3winBody {
-	border-top: 0;
-	border-left: 1px solid;
-	border-bottom: 1px solid;
-	border-right: 1px solid;
-	color: #c0c0c0;
-	background-color: #000;
-	padding: 2px;
-	min-height: 350px; /* TODO: Fix this value to some dynamic! */
-	font-family: Courier New, Deja Vu Sans Mono, Droid Sans Mono;
+    border-top: 0;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    color: #c0c0c0;
+    background-color: #000;
+    padding: 2px;
+    min-height: 350px; /* TODO: Fix this value to some dynamic! */
+    font-family: Courier New, Deja Vu Sans Mono, Droid Sans Mono;
 }
 
 .i3winTitle {
-	border: 1px solid;
-	padding: 2px 1px 0 1px;
-	font-size: 9pt;
+    border: 1px solid;
+    padding: 2px 1px 0 1px;
+    font-size: 9pt;
 }
 
 .host {
-	color: #00AA00;
+    color: #00AA00;
 }
 
 /** Focused window **/
 #i3winTitleFocused, #i3winBodyFocused {
-	border-color: #4c7899;
+    border-color: #4c7899;
 }
 
 #i3winTitleFocused {
-	background-color: #285577;
-	color: #ffffff;
+    background-color: #285577;
+    color: #ffffff;
 }
 
-#i3desk table #i3winIndicatorFocused {
-	border-color: #2e9ef4;
+#i3desk #i3winIndicatorFocused {
+    border-color: #2e9ef4;
 }
 
 /** Inactive window **/
 #i3winTitleInactive, #i3winBodyInactive {
-	border-color: #333333;
+    border-color: #333333;
 }
 
 #i3winTitleInactive {
-	background-color: #5f676a;
-	color: #ffffff;
+    background-color: #5f676a;
+    color: #ffffff;
 }
 
-#i3desk table #i3winIndicatorInactive {
-	border-color: #484e50;
+#i3desk #i3winIndicatorInactive {
+    border-color: #484e50;
 }
 
 /** Unfocused window **/
 #i3winTitleUnfocused, #i3winBodyUnfocused {
-	border-color: #333333;
+    border-color: #333333;
 }
 
 #i3winTitleUnfocused {
-	background-color: #222222;
-	color: #888888;
+    background-color: #222222;
+    color: #888888;
 }
 
-#i3desk table #i3winIndicatorUnfocused {
-	border-color: #292d2e;
+#i3desk #i3winIndicatorUnfocused {
+    border-color: #292d2e;
 }
 
 /** Urgent window **/
 #i3winTitleUrgent, #i3winBodyUrgent {
-	border-color: #2f343a;
+    border-color: #2f343a;
 }
 
 #i3winTitleUrgent {
-	background-color: #900000;
-	color: #ffffff;
+    background-color: #900000;
+    color: #ffffff;
 }
 
 #i3winBodyUrgent {
-	position: relative;
+    position: relative;
 }
 
-#i3desk table #i3winIndicatorUrgent {
-	border-color: #900000;
+#i3desk #i3winIndicatorUrgent {
+    border-color: #900000;
 }
 
 /**
-	Editor
+    Editor
 **/
-input[type=text], input[type=number] {
-	background-color: #000000;
-	color: green;
-	border: 1px solid #101010;
-	max-width: 130px;
+#editor {
+    overflow: auto;
+}
+
+#editor td {
+    white-space: nowrap;
+}
+
+input[type=text], input[type=number], input[type=range] {
+    background-color: #000000;
+    color: green;
+    border: 1px solid #101010;
+    max-width: 70px;
 }
 
 input[type=text]:focus, input[type=number]:focus {
-	color: red;
-	border: 1px solid #000000;
+    color: red;
+    border: 1px solid #000000;
 }
 
 #nanoHead {
-	background-color: #c0c0c0;
-	color: #000000;
-	text-align: center;
+    background-color: #c0c0c0;
+    color: #000000;
+    text-align: center;
 }
 
 #i3config {
-	margin: 0;
+    margin: 0;
+    height: 300px;
+    overflow: auto;
 }
 
 .silver {
-	background-color: #c0c0c0;
-	color: #000000;
+    background-color: #c0c0c0;
+    color: #000000;
 }
 
 #nanoFoot {
-	width: 100%;
-	border: 0;
-	position: absolute;
-	bottom: 0;
+    width: 100%;
+    border: 0;
+    position: absolute;
+    bottom: 0;
 }
 
 #i3desk #i3windows #nanoFoot td {
-	border: 0;
+    border: 0;
 }
 
 /**
-	Color mixer and color appliers
+    Color mixer and color appliers
 **/
 #i3desk #i3winIndicatorInactive td {
-	border: 0;
+    border: 0;
+}
+
+#mixedColorTd {
+    width: 110px;
 }
 
 #mixedColor {
-	width: 100px;
-	padding: 40px 0;
-	text-align: center;
-	background-color: #ffffff;
-	border: 1px solid #ffffff;
+    width: 100px;
+    padding: 40px 0;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
 }
 
 #mixedColorHex {
-	background-color: #000000;
+    background-color: #000000;
 }
 
 .mixedColor {
-	display: inline-block;
-	padding: 20px 0 0 0;
-	background-color: #ffffff;
-	border: 1px solid #ffffff;
-	margin-top: 10px;
+    display: inline-block;
+    padding: 20px 0 0 0;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    margin-top: 10px;
 }
 
 .mixedColor:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .mixedColorHex {
-	background-color: #000000;
-	padding: 1px;
+    background-color: #000000;
+    padding: 1px;
 }
 
 .colorApplier {
-	background-color: #000000;
-	color: green;
-	border: 1px solid #101010;
-	margin-right: 10px;
+    background-color: #000000;
+    color: green;
+    border: 1px solid #101010;
+    margin-right: 10px;
 }
 
 .colorApplier:hover {
-	color: #550000;
-	border: 1px solid #201010;
-	cursor: pointer;
+    color: #550000;
+    border: 1px solid #201010;
+    cursor: pointer;
+}
+
+@media (min-width: 992px) {
+    #i3 {
+	padding: 50px 50px 20px 50px;
+    }
+
+    #displayLogo {
+	padding-top: 20px;
+	font-size: 20pt;
+    }
+
+    .window {
+	box-sizing: border-box;
+    }
+
+    #i3winIndicatorFocused, #i3winIndicatorUrgent {
+	width: 65%;
+	float: left;
+    }
+
+    #i3winIndicatorInactive, #i3winIndicatorUnfocused {
+	width: 35%;
+	float: right;
+    }
+
+    #i3windows {
+	display: table;
+	clear: both;
+    }
+}
+
+@media (min-width: 1433px) {
+    input[type=text], input[type=number], input[type=range] {
+	max-width: 130px;
+    }
+}
+
+
+@media (max-width: 992px) {
+    html, body {
+	margin: 0;
+	padding: 0;
+    }
+
+    #i3barStatus .separated {
+	display: none;
+    }
+
+    input[type=range] {
+	max-width: 130px;
+    }
+}
+
+@media (max-width: 640px) {
+    #i3barStatus, #nanoFoot {
+	display: none;
+    }
 }
